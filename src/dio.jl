@@ -22,11 +22,9 @@ function dio(x::Vector{Float64}, fs::Int; kwargs...)
     
     n_dio_samples = @ccall libworld.GetSamplesForDIO(fs::Cint, length(x)::Cint, frame_period::Cdouble)::Cint
 
-    # allocate f0 vector
+    # allocate f0 and temporal positions vectors
     f0 = Vector{Cdouble}(undef, n_dio_samples)
-
-    duration_ms = 1000 * length(x) / fs
-    temporal_positions = collect(0.0:frame_period:duration_ms)
+    temporal_positions = similar(f0)
 
     @ccall libworld.Dio(x::Ptr{Cdouble}, length(x)::Cint, fs::Cint, diooption::Ptr{DioOption},
         temporal_positions::Ptr{Cdouble}, f0::Ptr{Cdouble})::Cvoid
