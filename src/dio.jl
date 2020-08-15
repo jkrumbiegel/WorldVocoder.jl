@@ -31,5 +31,5 @@ function dio(x::Vector{Float64}, fs::Int; kwargs...)
     @ccall libworld.Dio(x::Ptr{Cdouble}, length(x)::Cint, fs::Cint, diooption::Ptr{DioOption},
         temporal_positions::Ptr{Cdouble}, f0::Ptr{Cdouble})::Cvoid
 
-    f0
+    f0, temporal_positions
 end
