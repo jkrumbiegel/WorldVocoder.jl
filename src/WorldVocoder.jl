@@ -24,7 +24,7 @@ export world
 """
     world(x::Vector{Float64}, fs::Int)
 
-Returns `(refined_f0, spectrogram, aperiodicity)` after running the full WORLD pipeline
+Returns `(f0 = refined_f0, sp = spectrogram, ap = aperiodicity)` after running the full WORLD pipeline
 consisting of
 
 - `dio` (f0 extraction)
@@ -38,7 +38,11 @@ function world(x::Vector{Float64}, fs::Int)
     spectrogram = cheaptrick(x, fs, timestamps, refined_f0)
     fft_size = (size(spectrogram, 1) - 1) * 2
     aperiodicity = d4c(x, fs, timestamps, refined_f0, fft_size)
-    refined_f0, spectrogram, aperiodicity
+    (fo = refined_f0, sp = spectrogram, ap = aperiodicity)
+end
+
+function world(x, fs)
+    world(convert(Vector{Float64}, x), convert(Int, fs))
 end
 
 end
