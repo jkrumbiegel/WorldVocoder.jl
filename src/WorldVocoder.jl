@@ -26,10 +26,11 @@ export world
 
 Returns `(refined_f0, spectrogram, aperiodicity)` after running the full WORLD pipeline
 consisting of
-    - `dio` (f0 extraction)
-    - `stonemask` (f0 refinement)
-    - `cheaptrick` (spectrogram extraction)
-    - `d4c` (aperiodicity extraction)
+
+- `dio` (f0 extraction)
+- `stonemask` (f0 refinement)
+- `cheaptrick` (spectrogram extraction)
+- `d4c` (aperiodicity extraction)
 """
 function world(x, fs)
     f0, timestamps = dio(x, fs)
