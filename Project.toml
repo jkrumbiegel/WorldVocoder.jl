@@ -3,6 +3,9 @@ uuid = "7277111d-0ca7-4af3-9cd2-5d6e94f85dba"
 authors = ["Julius Krumbiegel <julius.krumbiegel@gmail.com> and contributors"]
 version = "0.1.0"
 
+[deps]
+WORLD_jll = "df1608cb-88be-5058-95d4-2cc1fff969de"
+
 [compat]
 julia = "1"
 

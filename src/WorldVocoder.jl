@@ -1,6 +1,7 @@
 module WorldVocoder
 
-const libworld = "/Users/juliuskrumbiegel/dev/c++/World/build/libworld.dylib"
+using WORLD_jll: libworld
+
 const DEFAULT_FRAME_PERIOD = 5
 
 include("dio.jl")
