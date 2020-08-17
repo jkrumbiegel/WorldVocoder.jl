@@ -38,7 +38,7 @@ function world(x::Vector{Float64}, fs::Int)
     spectrogram = cheaptrick(x, fs, timestamps, refined_f0)
     fft_size = (size(spectrogram, 1) - 1) * 2
     aperiodicity = d4c(x, fs, timestamps, refined_f0, fft_size)
-    (fo = refined_f0, sp = spectrogram, ap = aperiodicity)
+    (f0 = refined_f0, sp = spectrogram, ap = aperiodicity)
 end
 
 function world(x, fs)
