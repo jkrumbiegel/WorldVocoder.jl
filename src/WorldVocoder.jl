@@ -20,7 +20,18 @@ include("synthesis.jl")
 export synthesis
 
 export world
-function world(x, fs; kwargs...)
+
+"""
+    world(x, fs)
+
+Returns `(refined_f0, spectrogram, aperiodicity)` after running the full WORLD pipeline
+consisting of
+    - `dio` (f0 extraction)
+    - `stonemask` (f0 refinement)
+    - `cheaptrick` (spectrogram extraction)
+    - `d4c` (aperiodicity extraction)
+"""
+function world(x, fs)
     f0, timestamps = dio(x, fs)
     refined_f0 = stonemask(x, fs, timestamps, f0)
     spectrogram = cheaptrick(x, fs, timestamps, refined_f0)
