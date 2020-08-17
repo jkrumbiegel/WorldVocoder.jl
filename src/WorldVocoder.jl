@@ -2,7 +2,7 @@ module WorldVocoder
 
 using WORLD_jll: libworld
 
-const DEFAULT_FRAME_PERIOD = 5
+const DEFAULT_FRAME_PERIOD = 5.0
 
 include("dio.jl")
 export dio
