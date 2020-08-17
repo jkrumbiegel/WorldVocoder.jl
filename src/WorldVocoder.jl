@@ -22,7 +22,7 @@ export synthesis
 export world
 
 """
-    world(x, fs)
+    world(x::Vector{Float64}, fs::Int)
 
 Returns `(refined_f0, spectrogram, aperiodicity)` after running the full WORLD pipeline
 consisting of
@@ -32,7 +32,7 @@ consisting of
 - `cheaptrick` (spectrogram extraction)
 - `d4c` (aperiodicity extraction)
 """
-function world(x, fs)
+function world(x::Vector{Float64}, fs::Int)
     f0, timestamps = dio(x, fs)
     refined_f0 = stonemask(x, fs, timestamps, f0)
     spectrogram = cheaptrick(x, fs, timestamps, refined_f0)
