@@ -1,6 +1,6 @@
 # WorldVocoder
 
-[![Build Status](https://travis-ci.com/jkrumbiegel/WorldVocoder.jl.svg?branch=master)](https://travis-ci.com/jkrumbiegel/WorldVocoder.jl)
+![CI](https://github.com/jkrumbiegel/WorldVocoder.jl/workflows/CI/badge.svg)
 [![Coverage](https://codecov.io/gh/jkrumbiegel/WorldVocoder.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/jkrumbiegel/WorldVocoder.jl)
 
 `WorldVocoder.jl` is a wrapper package for the WORLD vocoder by mmorise https://github.com/mmorise/World.
