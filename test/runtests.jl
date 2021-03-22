@@ -13,3 +13,10 @@ using Test
 
     f0, sp, ap = world(x, fs)
 end
+
+@testset "Harvest" begin
+    fs = 44100
+    x = [sinpi(2t * 200) for t in 0:1/fs:5]
+
+    f0, temporal_positions = harvest(x, fs)
+end
